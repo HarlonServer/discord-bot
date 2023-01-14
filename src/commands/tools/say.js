@@ -13,7 +13,7 @@ module.exports = {
         });
 
         const channelID = interaction.options.getString('targetchannel');
-        const newMessage = 'hello' + channelID;
+        const newMessage = 'hello ' + channelID;
 
         await interaction.editReply({
             content: newMessage
