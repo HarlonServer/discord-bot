@@ -18,5 +18,6 @@ module.exports = {
         await interaction.editReply({
             content: newMessage
         });
+        console.log("this worked.");
     }
 }
