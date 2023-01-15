@@ -5,7 +5,7 @@ module.exports = {
         .setName('say')
         .setDescription('Announce things!')
         .addStringOption((option) => 
-             option.setName('Target channel')
+             option.setName('TargetChannel')
                    .setDescription('Paste the target channel ID.')),
     async execute(interaction, client) {
         const message = await interaction.deferReply({
