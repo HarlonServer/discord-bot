@@ -28,6 +28,13 @@ for (const folder of functionFolders) {
     require(`./functions/${folder}/${file}`)(client);
 }
 
+client.on('message', msg => {
+  if (msg.channel.type == "dm") {
+    msg.author.send("If you're trying to verify your account, please DM the other \"Harlon\" bot! No messages sent here will be passed through.");
+    return;
+  }
+});
+
 client.handleEvents();
 client.handleCommands();
 client.login(token);
