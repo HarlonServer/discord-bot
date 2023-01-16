@@ -3,7 +3,6 @@ const { token, databaseToken } = process.env;
 const { connect } = require('mongoose');
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
-const { data } = require("./commands/tools/embed");
 const err = require("./events/mongo/err");
 
 
