@@ -1,11 +1,11 @@
 const chalk = require("chalk");
 const { EmbedBuilder } = require("@discordjs/builders");
-const welcomeChannelKey = process.env;
 
 module.exports = {
   name: "guildMemberAdd",
   once: false,
   execute(member, client) {
+    const welcomeChannelKey = process.env;
     const { user, guild } = member;
     const welcomeChannel = member.guild.channels.cache.get(welcomeChannelKey);
     const welcomeMessage = `Welcome to the server <@${member.id}>!`;
