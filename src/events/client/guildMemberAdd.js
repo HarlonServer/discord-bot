@@ -7,7 +7,7 @@ module.exports = {
   execute(member, client) {
     const welcomeChannelKey = process.env;
     const { user, guild } = member;
-    const welcomeChannel = member.guild.channels.cache.get(welcomeChannelKey);
+    const welcomeChannel = member.guild.channels.cache.get(JSON.stringify(welcomeChannelKey));
     const welcomeMessage = `Welcome to the server <@${member.id}>!`;
 
     const welcomeEmbed = new EmbedBuilder()
