@@ -10,7 +10,7 @@ module.exports = (client) => {
       },
       {
         type: ActivityType.Listening,
-        text: "for /help",
+        text: "/help",
         status: "dnd",
       },
     ];
