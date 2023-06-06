@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("help")
+    .setName("dodo")
     .setDescription("Need help with server information?")
     .addStringOption((option) =>
       option
