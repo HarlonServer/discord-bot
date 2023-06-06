@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -15,13 +15,7 @@ module.exports = {
             { name: 'Gathering Materials', value: 'materials' },
 			{ name: 'Player Shops', value: 'shops' },
 		)
-    )
-    .addStringOption((option) =>
-      option
-        .setName("message")
-        .setDescription("Message to send to target channel.")
-    )
-    .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
+    ),
   async execute(interaction, client) {
     const topic = interaction.options.getString('topic');
     if (topic === housing) {
