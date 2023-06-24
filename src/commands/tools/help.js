@@ -29,7 +29,7 @@ module.exports = {
         .setTimestamp(Date.now())
     if (topic === 'housing') {
         await interaction.reply({
-            content: housingEmbed,
+            content: `${housingEmbed}`,
             ephemeral: false,
         });
     } else if (topic === 'factory') {
