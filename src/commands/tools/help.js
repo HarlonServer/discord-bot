@@ -18,9 +18,17 @@ module.exports = {
     ),
   async execute(interaction, client) {
     const topic = interaction.options.getString('topic');
+    const housingEmbed = new EmbedBuilder()
+        .setTitle(`Helper`)
+        .setDescription(
+          "**Q:** How can I get a house/apartment?\n\n**A:**\n\n🏘️ **Free Public Housing** can be found in Shoretrench. It can be claimed by clicking on a \"For Sale\" sign on the outside of a unit.\n\nWhen arriving by train, follow the markers in the ground, which will lead you to available units.\n\n🚇 [**Trip Planner** to Shoretrench](https://harlontripplanner.muffinbardeyt.repl.co/d/publichousing)\n**🧭 GPS** to Shoretrench: ``/gps start hl-shoretrench``\n\n🏘️ If you wish to buy an **apartment** or **house** elsewhere, you can do so anywhere across Harlon by simply clicking on a \"For Sale\" sign if one is available. If one is not available at the property you are interested in, please ask Staff either in-game or open a ticket in <#721631119421734982>."
+        )
+        .setColor(0x00f51d)
+        .setThumbnail(client.user.displayAvatarURL())
+        .setTimestamp(Date.now())
     if (topic === 'housing') {
         await interaction.reply({
-            content: "**Q:** How can I get a house/apartment?\n\n**A:**\n\n🏘️ **Free Public Housing** can be found in Shoretrench. It can be claimed by clicking on a \"For Sale\" sign on the outside of a unit.\n\nWhen arriving by train, follow the markers in the ground, which will lead you to available units.\n\n🚇 [**Trip Planner** to Shoretrench](https://harlontripplanner.muffinbardeyt.repl.co/d/publichousing)\n**🧭 GPS** to Shoretrench: ``/gps start hl-shoretrench``\n\n🏘️ If you wish to buy an **apartment** or **house** elsewhere, you can do so anywhere across Harlon by simply clicking on a \"For Sale\" sign if one is available. If one is not available at the property you are interested in, please ask Staff either in-game or open a ticket in <#721631119421734982>.",
+            content: housingEmbed,
             ephemeral: false,
         });
     } else if (topic === 'factory') {

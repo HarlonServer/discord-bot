@@ -7,7 +7,7 @@ module.exports = {
   execute(member, client) {
     const { user, guild } = member;
     const welcomeChannel = member.guild.channels.cache.get("304262753160527872");
-    const welcomeMessage = `Welcome to the server <@${member.id}>!`;
+    const welcomeMessage = `Welcome to the server, <@${member.id}>!`;
 
     const welcomeEmbed = new EmbedBuilder()
       .setTitle(`Welcome to HCS!`)
@@ -25,7 +25,7 @@ module.exports = {
         },
       ]);
     
-    welcomeChannel.send(welcomeMessage);
     welcomeChannel.send({embeds: [welcomeEmbed]});
+    welcomeChannel.send(welcomeMessage);
   },
 };
