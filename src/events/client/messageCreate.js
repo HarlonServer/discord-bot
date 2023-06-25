@@ -4,7 +4,7 @@ const { EmbedBuilder } = require("@discordjs/builders");
 module.exports = {
   name: "messageCreate",
   once: false,
-  execute(client, message) {
+  execute(message, client) {
     // const housingEmbed = new EmbedBuilder()
     //     .setTitle(`**Q:** How can I get a house/apartment?`)
     //     .setDescription(
@@ -33,7 +33,6 @@ module.exports = {
     //     )
     //     .setColor(0x00f51d)
     //     .setTimestamp(Date.now())
-    console.log(client);
     if (message.author.bot) return false;
     if (message.content.includes("apartment" || "house")){
         if (message.content.includes("buy" || "get" || "find" || "claim")){
