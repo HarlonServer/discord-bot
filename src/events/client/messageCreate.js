@@ -45,7 +45,7 @@ module.exports = {
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
-    const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'getting to', 'where is', 'where are', 'is there', 'are there', 'make', 'how do i', 'how to'];
+    const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'getting to', 'where is', 'where\'s', 'where are', 'is there', 'are there', 'make', 'how do i', 'how to'];
     const housingContents = ['apartment', 'house', 'apartments', 'houses', 'place to live'];
     const factoryContents = ['factory', 'factories'];
     const materialsContents = ['materials', 'resources', 'wood', 'plantation', 'mine']
@@ -53,10 +53,8 @@ module.exports = {
     const moneyContents = ['get money', 'make money', 'get cash', 'earn money', 'get rich']
     var passThru = false;
     if (message.author.bot) return false;
-    if(message.channel.DMChannel) {
-        console.log('success.....')
-        message.author.send("Success")
-        return;
+    if(message.channel === "dm") {
+        client.channels.cache.get('1122574678964314172').send(message);
     }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
