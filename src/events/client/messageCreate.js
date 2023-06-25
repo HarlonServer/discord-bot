@@ -65,6 +65,9 @@ module.exports = {
         client.channels.cache.get('1122574678964314172').send({embeds: [dmEmbed]});
         message.reply('📣 We hear you loud and clear! This message has been forwarded to the staff team.');
     }
+    if (member.roles.cache.has('405040036971806730')){
+        return false;
+    }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
            passThru = true
