@@ -45,11 +45,6 @@ module.exports = {
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
-    const dmEmbed = new EmbedBuilder()
-        .setTitle(`**From:** ${message.author.username}`)
-        .setDescription(message)
-        .setColor(0x00f51d)
-        .setTimestamp(Date.now())
     const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'getting to', 'where is', 'where are', 'is there', 'are there'];
     const housingContents = ['apartment', 'house', 'apartments', 'houses', 'place to live'];
     const factoryContents = ['factory', 'factories'];
@@ -60,11 +55,6 @@ module.exports = {
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
            passThru = true
-        }
-    }
-    for(const val of moneyContents){
-        if(message.content.toLowerCase().includes(val)){
-            message.reply({embeds: [moneyEmbed]})
         }
     }
     setTimeout(() => {
@@ -87,6 +77,11 @@ module.exports = {
             for(const val of shopsContents){
                 if(message.content.toLowerCase().includes(val)){
                     message.reply({embeds: [shopsEmbed]})
+                }
+            }
+            for(const val of moneyContents){
+                if(message.content.toLowerCase().includes(val)){
+                    message.reply({embeds: [moneyEmbed]})
                 }
             }
         }
