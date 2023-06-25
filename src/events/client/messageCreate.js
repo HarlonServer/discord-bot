@@ -55,6 +55,16 @@ module.exports = {
                     message.reply({embeds: [housingEmbed]})
                 }
             }
+            for(const val of factoryContents){
+                if(message.content.toLowerCase().includes(val)){
+                    message.reply({embeds: [factoryEmbed]})
+                }
+            }
+            for(const val of materialsContents){
+                if(message.content.toLowerCase().includes(val)){
+                    message.reply({embeds: [materialsEmbed]})
+                }
+            }
         }
        }, 1000)
 
