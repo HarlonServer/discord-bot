@@ -37,35 +37,58 @@ module.exports = {
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp(Date.now())
+    const qContents = ['buy', 'rent', 'get', 'find a', 'claim'];
+    const housingContents = ['apartment', 'house'];
+    const factoryContents = ['factory'];
+    const materialsContents = ['materials', 'resources']
+    var passThru = false;
     if (message.author.bot) return false;
-    if (message.content.includes("apartment" || "house")){
-        console.log("success");
-        if (message.content.includes("buy" || "get" || "find" || "claim")){
-            message.reply("topic: housing");
-        } else {
-            return false;
+    for(const val of qContents){
+        if(message.content.toLowerCase().includes(val)){
+           passThru = true
         }
-    };
-    if (message.content.includes("factory")){
-        if (message.content.includes("buy" || "get" || "find" || "claim")){
-            message.reply("topic: factory");
-        } else {
-            return false;
+    }
+    setTimeout(() => {
+        if(passThru == true){
+            for(const val of housingContents){
+                if(message.content.toLowerCase().includes(val)){
+                    message.reply("topic: housing")
+                }
+            }
         }
-    };
-    if (message.content.includes("materials" || "resources")){
-        if (message.content.includes("sell" || "get" || "find" || "claim")){
-            message.reply("topic: materials");
-        } else {
-            return false;
-        }
-    };
-    if (message.content.includes("shop" || "store")){
-        if (message.content.includes("buy" || "get" || "find" || "claim" || "set up" || "make a")){
-            message.reply("topic: shops");
-        } else {
-            return false;
-        }
-    };
+       }, 1000)
+
+
+
+
+    // if (message.content.includes("apartment" || "house")){
+    //     console.log("success");
+    //     if (message.content.includes("buy" || "get" || "find" || "claim")){
+    //         message.reply("topic: housing");
+    //     } else {
+    //         return false;
+    //     }
+    // };
+    // if (message.content.includes("factory")){
+    //     if (message.content.includes("buy" || "get" || "find" || "claim")){
+    //         message.reply("topic: factory");
+    //     } else {
+    //         return false;
+    //     }
+    // };
+    // if (message.content.includes("materials" || "resources")){
+    //     if (message.content.includes("sell" || "get" || "find" || "claim")){
+    //         message.reply("topic: materials");
+    //     } else {
+    //         return false;
+    //     }
+    // };
+    // if (message.content.includes("shop" || "store")){
+    //     if (message.content.includes("buy" || "get" || "find" || "claim" || "set up" || "make a")){
+    //         message.reply("topic: shops");
+    //     } else {
+    //         return false;
+    //     }
+    // };
   },
 };
