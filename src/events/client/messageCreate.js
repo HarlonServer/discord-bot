@@ -73,7 +73,7 @@ module.exports = {
     setTimeout(() => {
         if(passThru == true){
             if(message.channel.parent.name === 'Harlon' || 'Staff Only'){
-                return;
+                console.log("alrighty then..");
             };
             for(const val of housingContents){
                 if(message.content.toLowerCase().includes(val)){
