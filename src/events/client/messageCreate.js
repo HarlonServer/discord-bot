@@ -63,6 +63,7 @@ module.exports = {
     if (message.author.bot) return false;
     if(message.channel.type == ChannelType.DM) {
         console.log("OI!!")
+        if(message.content)
         client.channels.cache.get('1122574678964314172').send({embeds: [dmEmbed]});
         message.reply('**📣 We hear you loud and clear!** This message has been forwarded to the staff team.');
     }
