@@ -48,7 +48,7 @@ module.exports = {
         .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
     const dmEmbed = new EmbedBuilder()
         .setTitle(`**${message.author.username}** says...`)
-        .setDescription(message.content)
+        .setDescription(message.content || null)
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp(Date.now())
