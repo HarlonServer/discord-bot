@@ -54,8 +54,9 @@ module.exports = {
     var passThru = false;
     if (message.author.bot) return false;
     if(message.channel.DMChannel) {
+        console.log('success.....')
         message.author.send("Success")
-        return false;
+        return;
     }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
