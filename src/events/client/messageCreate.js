@@ -5,7 +5,7 @@ const { ChannelType } = require('discord.js');
 module.exports = {
   name: "messageCreate",
   once: false,
-  execute(message, member, client) {
+  execute(message, client, member,) {
     const housingEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I get a house/apartment?`)
         .setDescription(
