@@ -15,13 +15,12 @@ const client = new Client({
 		GatewayIntentBits.GuildMembers,
     GatewayIntentBits.DirectMessages,
 	],
+  partials: [
+    Partials.Channel,
+  ],
 });
 client.commands = new Collection();
 client.commandArray = [];
-
-const { Client, Partials } = require('discord.js');
-
-const client = new Client({ partials: [Partials.Channel] });
 
 const functionFolders = fs.readdirSync(`./src/functions`);
 for (const folder of functionFolders) {
