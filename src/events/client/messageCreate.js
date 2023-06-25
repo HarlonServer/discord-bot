@@ -6,9 +6,6 @@ module.exports = {
   name: "messageCreate",
   once: false,
   execute(message, client) {
-    if(message.channel.parent.name === 'Harlon' || 'Staff Only'){
-        console.log("thats not right");
-    };
     const housingEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I get a house/apartment?`)
         .setDescription(
@@ -75,6 +72,9 @@ module.exports = {
     }
     setTimeout(() => {
         if(passThru == true){
+            if(message.channel.parent.name === 'Harlon' || 'Staff Only'){
+                return;
+            };
             for(const val of housingContents){
                 if(message.content.toLowerCase().includes(val)){
                     message.reply({embeds: [housingEmbed]})
