@@ -12,7 +12,7 @@ module.exports = {
         )
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
-        .setFooter("Was this helpful? DM me any feedback!")
+        .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
     const factoryEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I buy a factory?`)
         .setDescription(
@@ -20,7 +20,7 @@ module.exports = {
         )
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
-        .setFooter("Was this helpful? DM me any feedback!")
+        .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
     const materialsEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How do I gather materials?`)
         .setDescription(
@@ -28,7 +28,7 @@ module.exports = {
         )
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
-        .setFooter("Was this helpful? DM me any feedback!")
+        .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
     const moneyEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I make money?`)
         .setDescription(
@@ -44,7 +44,7 @@ module.exports = {
         )
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
-        .setFooter("Was this helpful? DM me any feedback!")
+        .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
     const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'where is', 'where are', 'is there', 'are there'];
     const housingContents = ['apartment', 'house', 'apartments', 'houses', 'place to live'];
     const factoryContents = ['factory', 'factories'];
