@@ -57,10 +57,6 @@ module.exports = {
     const moneyContents = ['get money', 'make money', 'get cash', 'earn money', '']
     var passThru = false;
     if (message.author.bot) return false;
-    if (message.guild === null) {
-        console.log('DM RECIEVED.')
-        client.channels.cache.get('1122574678964314172').send({embeds: [dmEmbed]});
-    }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
            passThru = true
