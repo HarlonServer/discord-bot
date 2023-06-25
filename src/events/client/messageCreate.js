@@ -39,6 +39,7 @@ module.exports = {
         .setTimestamp(Date.now())
     if (message.author.bot) return false;
     if (message.content.includes("apartment" || "house")){
+        console.log("success");
         if (message.content.includes("buy" || "get" || "find" || "claim")){
             message.reply("topic: housing");
         } else {
