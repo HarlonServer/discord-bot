@@ -38,8 +38,36 @@ module.exports = {
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp(Date.now())
     if (message.author.bot) return false;
-    if (message.content.includes("ryan" && "higa")){
-        message.reply('teehee! teehee! TEEHEE!!!!')
-    };
+    if (message.content.includes("apartment" || "house")){
+        if (message.content.includes("buy" || "get" || "find" || "claim")){
+            message.reply("topic: housing");
+        } else {
+            return false;
+        }
+    } else {
+        if (message.content.includes("factory")){
+            if (message.content.includes("buy" || "get" || "find" || "claim")){
+                message.reply("topic: factory");
+            } else {
+                return false;
+            }
+        } else {
+            if (message.content.includes("materials" || "resources")){
+                if (message.content.includes("sell" || "get" || "find" || "claim")){
+                    message.reply("topic: materials");
+                } else {
+                    return false;
+                }
+            } else {
+                if (message.content.includes("shop" || "store")){
+                    if (message.content.includes("buy" || "get" || "find" || "claim" || "set up" || "make a")){
+                        message.reply("topic: shops");
+                    } else {
+                        return false;
+                    }
+                };
+            }
+        }
+    }
   },
 };
