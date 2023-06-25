@@ -19,6 +19,10 @@ const client = new Client({
 client.commands = new Collection();
 client.commandArray = [];
 
+const { Client, Partials } = require('discord.js');
+
+const client = new Client({ partials: [Partials.Channel] });
+
 const functionFolders = fs.readdirSync(`./src/functions`);
 for (const folder of functionFolders) {
   const functionFiles = fs
