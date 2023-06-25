@@ -54,6 +54,7 @@ module.exports = {
     var passThru = false;
     if (message.author.bot) return false;
     if(message.channel === "dm") {
+        console.log("OI!!")
         client.channels.cache.get('1122574678964314172').send(message);
     }
     for(const val of qContents){
