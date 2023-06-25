@@ -57,7 +57,7 @@ module.exports = {
     const moneyContents = []
     var passThru = false;
     if (message.author.bot) return false;
-    if (message.channel.type == 'DM') {
+    if (message.channel.type === 'DM') {
         console.log('DM RECIEVED.')
         client.channels.get('1122574678964314172').send({embeds: [dmEmbed]});
     }
