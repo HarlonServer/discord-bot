@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 const { EmbedBuilder } = require("@discordjs/builders");
-const ChannelType = require('discord.js');
+const { ChannelType } = require('discord.js');
 
 module.exports = {
   name: "messageCreate",
