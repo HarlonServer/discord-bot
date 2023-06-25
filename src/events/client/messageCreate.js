@@ -58,6 +58,7 @@ module.exports = {
     const materialsContents = ['materials', 'resources', 'wood', 'plantation', 'mine']
     const shopsContents = ['shop', 'shops', 'sell sign', 'buy sign', 'store', 'stores']
     const moneyContents = ['get money', 'make money', 'get cash', 'earn money', 'get rich']
+    const allowedIds = ['404270340567465985', '663102388583792674', '731971573015249068']
     var passThru = false;
     if (message.author.bot) return false;
     if(message.channel.type == ChannelType.DM) {
@@ -72,7 +73,7 @@ module.exports = {
     }
     setTimeout(() => {
         if(passThru == true){
-            if(message.channel.parent.id === '404270340567465985' || '663102388583792674' || '731971573015249068'){
+            if(allowedIds.includes(message.channel.parentId)){
                 for(const val of housingContents){
                     if(message.content.toLowerCase().includes(val)){
                         message.reply({embeds: [housingEmbed]})
