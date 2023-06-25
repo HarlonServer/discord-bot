@@ -46,6 +46,12 @@ module.exports = {
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
+    const dmEmbed = new EmbedBuilder()
+        .setTitle(`**${message.author.username}** says...`)
+        .setDescription(message.content)
+        .setColor(0x00f51d)
+        .setThumbnail(client.user.displayAvatarURL())
+        .setTimestamp(Date.now())
     const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'getting to', 'where is', 'where\'s', 'where are', 'is there', 'are there', 'make', 'how do i', 'how to'];
     const housingContents = ['apartment', 'house', 'apartments', 'houses', 'place to live'];
     const factoryContents = ['factory', 'factories'];
@@ -56,7 +62,7 @@ module.exports = {
     if (message.author.bot) return false;
     if(message.channel.type == ChannelType.DM) {
         console.log("OI!!")
-        client.channels.cache.get('1122574678964314172').send(message.content);
+        client.channels.cache.get('1122574678964314172').send({embeds: [dmEmbed]});
     }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){

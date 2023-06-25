@@ -15,6 +15,7 @@ module.exports = {
 			{ name: 'Factories', value: 'factory' },
             { name: 'Gathering Materials', value: 'materials' },
 			{ name: 'Player Shops', value: 'shops' },
+            { name: 'Making Money', value: 'money' },
 		)
     ),
   async execute(interaction, client) {
@@ -43,6 +44,14 @@ module.exports = {
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp(Date.now())
+    const moneyEmbed = new EmbedBuilder()
+        .setTitle(`**Q:** How can I make money?`)
+        .setDescription(
+          "💷 There are several ways to earn money in Harlon:\n\n`1.` You get 10£ for every 15min of play time.\n`2.` You can earn an additional 40£ per voting page you [vote for us](https://vote.harlonserver.net).\n`3.` Sometimes the government offers work. They usually post their job openings in <#952496868036853760>.\n`6.` Chopping trees or going on a mining trip can be the solution. Do `/help Materials` to learn more.\n`7.` You prefer opening your own business? You can purchase factories south of the city and sell your items in rentable or purchasable stores across the city. Do `/help Factories` and `/help Shops` to learn more."
+        )
+        .setColor(0x00f51d)
+        .setThumbnail(client.user.displayAvatarURL())
+        .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
     const shopsEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How do I start a shop?`)
         .setDescription(
@@ -59,6 +68,8 @@ module.exports = {
         await interaction.reply({embeds: [materialsEmbed]});
     } else if (topic === 'shops') {
         await interaction.reply({embeds: [shopsEmbed]});
+    } else if (topic === 'money') {
+        await interaction.reply({embeds: [moneyEmbed]});
     };
   },
 };
