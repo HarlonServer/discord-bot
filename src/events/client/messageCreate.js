@@ -56,7 +56,7 @@ module.exports = {
     if (message.author.bot) return false;
     if(message.channel.type == ChannelType.DM) {
         console.log("OI!!")
-        client.channels.cache.get('1122574678964314172').send(message);
+        client.channels.cache.get('1122574678964314172').send(message.content);
     }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
@@ -92,38 +92,5 @@ module.exports = {
             }
         }
        }, 500)
-
-
-
-
-    // if (message.content.includes("apartment" || "house")){
-    //     console.log("success");
-    //     if (message.content.includes("buy" || "get" || "find" || "claim")){
-    //         message.reply("topic: housing");
-    //     } else {
-    //         return false;
-    //     }
-    // };
-    // if (message.content.includes("factory")){
-    //     if (message.content.includes("buy" || "get" || "find" || "claim")){
-    //         message.reply("topic: factory");
-    //     } else {
-    //         return false;
-    //     }
-    // };
-    // if (message.content.includes("materials" || "resources")){
-    //     if (message.content.includes("sell" || "get" || "find" || "claim")){
-    //         message.reply("topic: materials");
-    //     } else {
-    //         return false;
-    //     }
-    // };
-    // if (message.content.includes("shop" || "store")){
-    //     if (message.content.includes("buy" || "get" || "find" || "claim" || "set up" || "make a")){
-    //         message.reply("topic: shops");
-    //     } else {
-    //         return false;
-    //     }
-    // };
   },
 };

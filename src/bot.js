@@ -31,12 +31,6 @@ for (const folder of functionFolders) {
     require(`./functions/${folder}/${file}`)(client);
 }
 
-client.on('message', msg => {
-  if(message.channel.DMChannel) {
-    message.author.send("Success");
-  }
-});
-
 client.handleEvents();
 client.handleCommands();
 client.login(token);
