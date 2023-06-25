@@ -45,10 +45,11 @@ module.exports = {
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
-    const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'getting to', 'where is', 'where are', 'is there', 'are there'];
+    const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'getting to', 'where is', 'where are', 'is there', 'are there', 'make', 'how do i', 'how to'];
     const housingContents = ['apartment', 'house', 'apartments', 'houses', 'place to live'];
     const factoryContents = ['factory', 'factories'];
     const materialsContents = ['materials', 'resources', 'wood', 'plantation', 'mine']
+    const shopsContents = ['shop', 'shops', 'sell sign', 'buy sign', 'store', 'stores']
     const moneyContents = ['get money', 'make money', 'get cash', 'earn money', '']
     var passThru = false;
     if (message.author.bot) return false;
