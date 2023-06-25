@@ -72,34 +72,33 @@ module.exports = {
     }
     setTimeout(() => {
         if(passThru == true){
-            if(message.channel.parent.name === 'Harlon' || 'Staff Only'){
-                console.log("alrighty then..");
+            if(message.channel.parent.name === 'Harlon' || 'Chat'){
+                for(const val of housingContents){
+                    if(message.content.toLowerCase().includes(val)){
+                        message.reply({embeds: [housingEmbed]})
+                    }
+                }
+                for(const val of factoryContents){
+                    if(message.content.toLowerCase().includes(val)){
+                        message.reply({embeds: [factoryEmbed]})
+                    }
+                }
+                for(const val of materialsContents){
+                    if(message.content.toLowerCase().includes(val)){
+                        message.reply({embeds: [materialsEmbed]})
+                    }
+                }
+                for(const val of shopsContents){
+                    if(message.content.toLowerCase().includes(val)){
+                        message.reply({embeds: [shopsEmbed]})
+                    }
+                }
+                for(const val of moneyContents){
+                    if(message.content.toLowerCase().includes(val)){
+                        message.reply({embeds: [moneyEmbed]})
+                    }
+                } return;
             };
-            for(const val of housingContents){
-                if(message.content.toLowerCase().includes(val)){
-                    message.reply({embeds: [housingEmbed]})
-                }
-            }
-            for(const val of factoryContents){
-                if(message.content.toLowerCase().includes(val)){
-                    message.reply({embeds: [factoryEmbed]})
-                }
-            }
-            for(const val of materialsContents){
-                if(message.content.toLowerCase().includes(val)){
-                    message.reply({embeds: [materialsEmbed]})
-                }
-            }
-            for(const val of shopsContents){
-                if(message.content.toLowerCase().includes(val)){
-                    message.reply({embeds: [shopsEmbed]})
-                }
-            }
-            for(const val of moneyContents){
-                if(message.content.toLowerCase().includes(val)){
-                    message.reply({embeds: [moneyEmbed]})
-                }
-            }
         }
        }, 500)
   },
