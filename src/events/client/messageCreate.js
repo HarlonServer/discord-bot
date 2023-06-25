@@ -33,7 +33,7 @@ module.exports = {
     //     )
     //     .setColor(0x00f51d)
     //     .setTimestamp(Date.now())
-    console.log(message);
+    console.log(message.content);
     if (message.author.bot) return false;
     if (message.content.includes("apartment" || "house")){
         if (message.content.includes("buy" || "get" || "find" || "claim")){
