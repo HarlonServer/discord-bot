@@ -4,7 +4,7 @@ const { EmbedBuilder } = require("@discordjs/builders");
 module.exports = {
   name: "messageCreate",
   once: false,
-  execute(message) {
+  execute(client, message) {
     const housingEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I get a house/apartment?`)
         .setDescription(
