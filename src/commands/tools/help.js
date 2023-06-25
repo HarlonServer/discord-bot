@@ -47,7 +47,7 @@ module.exports = {
     const moneyEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I make money?`)
         .setDescription(
-          "💷 There are several ways to earn money in Harlon:\n\n`1.` You get 10£ for every 15min of play time.\n`2.` You can earn an additional 40£ per voting page you [vote for us](https://vote.harlonserver.net).\n`3.` Sometimes the government offers work. They usually post their job openings in <#952496868036853760>.\n`6.` Chopping trees or going on a mining trip can be the solution. </help topic Gathering Materials:1122260330265972757> to learn more.\n`7.` You prefer opening your own business? You can purchase factories south of the city and sell your items in rentable or purchasable stores across the city. Do </help topic Factories:1122260330265972757> and </help topic Player Shops:1122260330265972757> to learn more."
+          "💷 There are several ways to earn money in Harlon:\n\n`1.` You get 10£ for every 15min of play time.\n`2.` You can earn an additional 40£ per voting page you [vote for us](https://vote.harlonserver.net).\n`3.` Sometimes the government offers work. They usually post their job openings in <#952496868036853760>.\n`6.` Chopping trees or going on a mining trip can be the solution. </HELP TOPIC GATHERING_MATERIALS:1122260330265972757> to learn more.\n`7.` You prefer opening your own business? You can purchase factories south of the city and sell your items in rentable or purchasable stores across the city. Do </HELP TOPIC FACTORIES:1122260330265972757> and </HELP TOPIC PLAYER_SHOPS:1122260330265972757> to learn more."
         )
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
