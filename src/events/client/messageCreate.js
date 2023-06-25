@@ -6,8 +6,8 @@ module.exports = {
   once: false,
   execute(message) {
     if (message.author.bot) return false;
-    if (message.content.includes("teehee")){
-        message.reply('haha ik that reference!')
+    if (message.content.includes("ryan" && "higa")){
+        message.reply('teehee! teehee! TEEHEE!!!!')
     };
   },
 };
