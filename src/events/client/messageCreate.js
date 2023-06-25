@@ -52,7 +52,7 @@ module.exports = {
         if(passThru == true){
             for(const val of housingContents){
                 if(message.content.toLowerCase().includes(val)){
-                    message.reply("topic: housing")
+                    message.reply({embeds: [welcomeEmbed]})
                 }
             }
         }
