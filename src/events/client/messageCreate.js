@@ -6,7 +6,7 @@ module.exports = {
   name: "messageCreate",
   once: false,
   execute(message, client) {
-    if(message.channel.parent.name === 'Harlon' || 'Staff Only') return false;
+    if(message.channel.parent.name === 'Harlon' || 'Staff Only') return;
     const housingEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I get a house/apartment?`)
         .setDescription(
