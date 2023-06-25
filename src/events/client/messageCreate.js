@@ -1,10 +1,11 @@
 const chalk = require("chalk");
 const { EmbedBuilder } = require("@discordjs/builders");
+const { Discord, bot } = require(discord.js)
 
 module.exports = {
   name: "messageCreate",
   once: false,
-  execute(client, message) {
+  execute(client, message, Discord, bot) {
     const housingEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I get a house/apartment?`)
         .setDescription(
