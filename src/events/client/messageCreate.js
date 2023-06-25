@@ -5,7 +5,8 @@ const { ChannelType } = require('discord.js');
 module.exports = {
   name: "messageCreate",
   once: false,
-  execute(message, client, member) {
+  execute(message, client) {
+    if(message.channel.parent.name === 'Harlon' || 'Staff Only') return false;
     const housingEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I get a house/apartment?`)
         .setDescription(
@@ -63,9 +64,8 @@ module.exports = {
     if(message.channel.type == ChannelType.DM) {
         console.log("OI!!")
         client.channels.cache.get('1122574678964314172').send({embeds: [dmEmbed]});
-        message.reply('📣 We hear you loud and clear! This message has been forwarded to the staff team.');
+        message.reply('**📣 We hear you loud and clear!** This message has been forwarded to the staff team.');
     }
-    if (member.roles.cache.has('405040036971806730')) return false;
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
            passThru = true
