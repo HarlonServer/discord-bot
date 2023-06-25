@@ -1,6 +1,5 @@
 const chalk = require("chalk");
 const { EmbedBuilder } = require("@discordjs/builders");
-const { Discord, bot } = require(discord.js)
 
 module.exports = {
   name: "messageCreate",
