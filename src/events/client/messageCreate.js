@@ -57,9 +57,9 @@ module.exports = {
     const moneyContents = []
     var passThru = false;
     if (message.author.bot) return false;
-    if (message.channel.type === 'DM') {
+    if (message.guild === null) {
         console.log('DM RECIEVED.')
-        client.channels.get('1122574678964314172').send({embeds: [dmEmbed]});
+        client.channels.cache.get('1122574678964314172').send({embeds: [dmEmbed]});
     }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
