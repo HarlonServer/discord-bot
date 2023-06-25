@@ -32,7 +32,7 @@ module.exports = {
     const moneyEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How can I make money?`)
         .setDescription(
-          "💷 There are several ways to earn money in Harlon:\n\n`1.` You get 10£ for ever 15min playing time.\n`2.` You can earn additional 40£ per voting page you [vote for us](https://vote.harlonserver.net).\n`3.` Sometimes the government offers work. They usually post their job openings in <#952496868036853760>.\n`6.` Chopping trees or going on a mining trip can be the solution for your first money. Do `/help Materials` to learn more.\n`7.` You prefer opening your own business? You can purchase factories south of the city and sell your items in rentable or purchasable stores across the city. Do `/help Shops` to learn more."
+          "💷 There are several ways to earn money in Harlon:\n\n`1.` You get 10£ for every 15min of play time.\n`2.` You can earn an additional 40£ per voting page you [vote for us](https://vote.harlonserver.net).\n`3.` Sometimes the government offers work. They usually post their job openings in <#952496868036853760>.\n`6.` Chopping trees or going on a mining trip can be the solution. Do `/help Materials` to learn more.\n`7.` You prefer opening your own business? You can purchase factories south of the city and sell your items in rentable or purchasable stores across the city. Do `/help Factories` and `/help Shops` to learn more."
         )
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
@@ -50,7 +50,7 @@ module.exports = {
     const factoryContents = ['factory', 'factories'];
     const materialsContents = ['materials', 'resources', 'wood', 'plantation', 'mine']
     const shopsContents = ['shop', 'shops', 'sell sign', 'buy sign', 'store', 'stores']
-    const moneyContents = ['get money', 'make money', 'get cash', 'earn money', '']
+    const moneyContents = ['get money', 'make money', 'get cash', 'earn money', 'get rich']
     var passThru = false;
     if (message.author.bot) return false;
     for(const val of qContents){
