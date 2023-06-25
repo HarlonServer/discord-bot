@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { token, databaseToken } = process.env;
 const { connect } = require('mongoose');
-const { Client, Collection, GatewayIntentBits } = require("discord.js");
+const { Client, Collection, GatewayIntentBits, Partials } = require("discord.js");
 const fs = require("fs");
 const err = require("./events/mongo/err");
 
