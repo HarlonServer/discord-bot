@@ -74,7 +74,7 @@ module.exports = {
                     message.reply({embeds: [materialsEmbed]})
                 }
             }
-            for(const val of moneyContentsContents){
+            for(const val of moneyContents){
                 if(message.content.toLowerCase().includes(val)){
                     message.reply({embeds: [moneyEmbed]})
                 }
