@@ -53,6 +53,10 @@ module.exports = {
     const moneyContents = ['get money', 'make money', 'get cash', 'earn money', 'get rich']
     var passThru = false;
     if (message.author.bot) return false;
+    if(message.channel.DMChannel) {
+        message.author.send("Success")
+        return false;
+    }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
            passThru = true
