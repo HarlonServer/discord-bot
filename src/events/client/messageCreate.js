@@ -72,7 +72,7 @@ module.exports = {
     }
     setTimeout(() => {
         if(passThru == true){
-            if(message.channel.parent.name === 'Harlon' || 'Chat'){
+            if(message.channel.parent.id === '404270340567465985' || '663102388583792674' || '731971573015249068'){
                 for(const val of housingContents){
                     if(message.content.toLowerCase().includes(val)){
                         message.reply({embeds: [housingEmbed]})
@@ -97,8 +97,8 @@ module.exports = {
                     if(message.content.toLowerCase().includes(val)){
                         message.reply({embeds: [moneyEmbed]})
                     }
-                } return;
-            };
+                }
+            } else return;
         }
        }, 500)
   },
