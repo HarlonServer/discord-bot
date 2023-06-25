@@ -36,8 +36,8 @@ module.exports = {
         )
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
-        .setTimestamp(Date.now())
-        const shopsEmbed = new EmbedBuilder()
+        .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
+    const shopsEmbed = new EmbedBuilder()
         .setTitle(`**Q:** How do I start a shop?`)
         .setDescription(
           "🛍️ You can **buy/rent shop spaces** across the city by clicking on a \"For Sale/Rent\" sign at the property. You can request Staff to add exterior branding and add your shop to the Dynmap for greater visibility. \n\n💰 Set up the selling chests: **1:** Left-click a chest with the item you wish to sell. **2:** Write in the cost per item. **3:** Add items to the chest and you are good to go! **4:** If you wish to edit your chest (price etc.), simply right-click the sign."
@@ -45,13 +45,22 @@ module.exports = {
         .setColor(0x00f51d)
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter({ text: 'Was this helpful? DM this bot with any feedback!'})
-    const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'where is', 'where are', 'is there', 'are there'];
+    const dmEmbed = new EmbedBuilder()
+        .setTitle(`**From:** ${message.author.username}`)
+        .setDescription(message)
+        .setColor(0x00f51d)
+        .setTimestamp(Date.now())
+    const qContents = ['buy', 'rent', 'get a', 'find a', 'claim', 'get to', 'getting to', 'where is', 'where are', 'is there', 'are there'];
     const housingContents = ['apartment', 'house', 'apartments', 'houses', 'place to live'];
     const factoryContents = ['factory', 'factories'];
     const materialsContents = ['materials', 'resources', 'wood', 'plantation', 'mine']
     const moneyContents = []
     var passThru = false;
     if (message.author.bot) return false;
+    if (message.channel.type == 'DM') {
+        console.log('DM RECIEVED.')
+        client.channels.get('1122574678964314172').send({embeds: [dmEmbed]});
+    }
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
            passThru = true
@@ -74,9 +83,9 @@ module.exports = {
                     message.reply({embeds: [materialsEmbed]})
                 }
             }
-            for(const val of moneyContents){
+            for(const val of shopsContents){
                 if(message.content.toLowerCase().includes(val)){
-                    message.reply({embeds: [moneyEmbed]})
+                    message.reply({embeds: [shopsEmbed]})
                 }
             }
         }
