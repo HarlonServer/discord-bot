@@ -54,7 +54,7 @@ module.exports = {
     const housingContents = ['apartment', 'house', 'apartments', 'houses', 'place to live'];
     const factoryContents = ['factory', 'factories'];
     const materialsContents = ['materials', 'resources', 'wood', 'plantation', 'mine']
-    const moneyContents = []
+    const moneyContents = ['get money', 'make money', 'get cash', 'earn money', '']
     var passThru = false;
     if (message.author.bot) return false;
     if (message.guild === null) {
@@ -64,6 +64,11 @@ module.exports = {
     for(const val of qContents){
         if(message.content.toLowerCase().includes(val)){
            passThru = true
+        }
+    }
+    for(const val of moneyContents){
+        if(message.content.toLowerCase().includes(val)){
+            message.reply({embeds: [moneyEmbed]})
         }
     }
     setTimeout(() => {
