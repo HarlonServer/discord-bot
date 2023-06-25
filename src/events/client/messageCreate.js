@@ -1,5 +1,6 @@
 const chalk = require("chalk");
 const { EmbedBuilder } = require("@discordjs/builders");
+const ChannelType = require('discord.js');
 
 module.exports = {
   name: "messageCreate",
@@ -53,7 +54,7 @@ module.exports = {
     const moneyContents = ['get money', 'make money', 'get cash', 'earn money', 'get rich']
     var passThru = false;
     if (message.author.bot) return false;
-    if(message.channel === "dm") {
+    if(message.channel.type == ChannelType.DM) {
         console.log("OI!!")
         client.channels.cache.get('1122574678964314172').send(message);
     }
