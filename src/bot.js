@@ -37,8 +37,8 @@ client.once('ready', async () => {
   console.log('Scheduler on.')
 
   try {
-    await cron.schedule('00 17 * * 6', () => {
-      console.log('yoo hoo schedulers on!')
+    await cron.schedule('0 17 * * SAT [ $(expr $(date +%W) % 2) -eq 1 ]', () => {
+      client.channels.cache.get('1122574678964314172').send('> <:coatofarms:970613122459107349> **Voting has begun** for the House of Assembly. <@578307132609527810>');
     });
   } catch (error) {
     common.error('Error trying to send: ', error);

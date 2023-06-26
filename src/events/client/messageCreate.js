@@ -100,7 +100,7 @@ module.exports = {
                         message.reply({embeds: [moneyEmbed]})
                     }
                 }
-            } else return;
+            }
         }
        }, 500)
   },
