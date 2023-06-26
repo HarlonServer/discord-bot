@@ -16,6 +16,7 @@
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
     "git": "^0.1.5",
-    "mongoose": "^6.11.2"
+    "mongoose": "^6.11.2",
+    "node-cron": "^3.0.2"
   }
 }

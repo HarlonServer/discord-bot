@@ -31,6 +31,23 @@ for (const folder of functionFolders) {
     require(`./functions/${folder}/${file}`)(client);
 }
 
+const cron = require('node-cron');
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.once('ready', async () => {
+  console.log('Scheduler on.')
+
+  try {
+    await cron.schedule('45 0 * * 1', () => {
+      console.log('yoo hoo schedulers on!')
+    });
+  } catch (error) {
+    common.error('Error trying to send: ', error);
+  }
+});
+
 client.handleEvents();
 client.handleCommands();
 client.login(token);
