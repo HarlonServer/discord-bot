@@ -37,7 +37,7 @@ client.once('ready', async () => {
   console.log('Scheduler on.')
 
   try {
-    await cron.schedule('45 0 * * 1', () => {
+    await cron.schedule('47 0 * * 1', () => {
       console.log('yoo hoo schedulers on!')
     });
   } catch (error) {
