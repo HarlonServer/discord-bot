@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { token, databaseToken } = process.env;
 const { connect } = require('mongoose');
-const { Client, Collection, GatewayIntentBits, Partials } = require("discord.js");
+const { Client, Collection, GatewayIntentBits, Partials, Discord } = require("discord.js");
 const fs = require("fs");
 const err = require("./events/mongo/err");
 
@@ -32,9 +32,6 @@ for (const folder of functionFolders) {
 }
 
 const cron = require('node-cron');
-
-const Discord = require("discord.js");
-const client = new Discord.Client();
 
 client.once('ready', async () => {
   console.log('Scheduler on.')
