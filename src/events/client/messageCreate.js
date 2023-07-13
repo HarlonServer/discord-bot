@@ -68,7 +68,7 @@ module.exports = {
         message.reply('**📣 We hear you loud and clear!** This message has been forwarded to the staff team.');
     }
     for(const val of qContents){
-        if(message.content.toLowerCase().includes(val)){
+        if(message.content.toLowerCase().includes(val) && message.content.toLowerCase().includes("?")){
            passThru = true
         }
     }
